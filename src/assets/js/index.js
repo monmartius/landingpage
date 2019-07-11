@@ -1,8 +1,8 @@
-require('bootstrap'); 
+// require('bootstrap'); 
 
 let breakpoints = require('./breakpoints.js');
 
-console.log('s');
+// console.log('s');
 
 import "../scss/styles.scss";
 
