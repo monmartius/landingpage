@@ -17,7 +17,7 @@ window.addEventListener('load', function(){
 
 
 
-let displayInfo = require('./display-info.js')();
+	let displayInfo = require('./display-info.js')();
 
 	displayInfo.html('size: ' + breakpoints.onPoint() + '<br>'+ breakpoints.windowSizePx().widthHeight);
 
@@ -45,6 +45,44 @@ let displayInfo = require('./display-info.js')();
 	});
 
 
+	let topMenuBtn = document.querySelector('.top-menu__btn');
+	// console.log("topMenuBtn", topMenuBtn);
+
+	topMenuBtn.addEventListener('click', (event)=>{
+
+		// event.preventDefault();
+
+		event.stopPropagation();
+		
+		// console.log("event.preventDefault()", event.preventDefault());
+
+		topMenuBtn.classList.toggle('active');
+	});
+
+	let html = document.querySelector('html');
+	let body = document.querySelector('body');
+
+	html.addEventListener('click', ()=>{
+
+		// console.log('html');		
+		if(topMenuBtn.classList.contains('active')){
+
+			topMenuBtn.classList.remove('active');
+		}
+
+	});
+
+
+	// body.addEventListener('click', ()=>{
+
+	// 	// console.log('body');		
+
+	// 	if(topMenuBtn.classList.contains('active')){
+
+	// 		topMenuBtn.classList.remove('active');
+	// 	}
+
+	// });
 
 });
 

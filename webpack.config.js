@@ -183,12 +183,14 @@ module.exports = {
 		]
 	},
 
-	devServer: {
-		// contentBase: path.join(__dirname, 'dist'),
-		// compress: true,
-		hot: true,
-		port: 8080
-	},	
+	// devServer: {
+	// 	// contentBase: path.join(__dirname, 'dist'),
+	// 	// compress: true,
+  
+	// 	// watchContentBase: true,
+	// 	// hot: true,
+	// 	// port: 18080
+	// },	
 
 	plugins: [
 		new HtmlWebpackPlugin({

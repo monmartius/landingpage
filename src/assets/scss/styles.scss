@@ -1,1 +1,178 @@
 @import "custom-bootstrap.scss";
+
+
+// $grid-gutter-width:
+
+body{
+
+	position: relative;
+	// background-color: green;
+}
+
+.first-screen{
+
+	min-height: 300px;
+
+	background-image: url(../images/flat.jpg);
+
+	background-position: center center;
+	background-size: cover;
+
+	@include media-breakpoint-up(sm){
+
+	}
+}
+
+
+$top-menu-bg-color: orange;
+// $top-menu-bg-color: red;
+$top-menu-color: white;
+$top-menu-color-hover: orange;
+$top-menu-bg-color-hover: white;
+$top-menu-vertical-gutter: 15px;
+$top-menu-gorizontal-gutter: 15px;
+$top-menu__btn-width: 50px;
+$top-menu__btn-height: 50px;
+
+section.top-menu{
+
+	background-color: $top-menu-bg-color;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.top-menu .container{
+
+	@extend %container-without-row;
+
+	@include media-breakpoint-down(sm){
+
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.top-menu__btn{
+
+// background-color: red;
+outline: 1px solid red;
+
+
+	width: $top-menu__btn-width;
+	height: $top-menu__btn-height;
+
+	margin-left: auto;
+
+	background-image: url(../images/menu-open.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	@include media-breakpoint-up(md){
+
+		display: none;
+	}
+}
+
+.top-menu__btn.active{
+
+	background-image: url(../images/menu-close.svg);
+}
+
+
+.top-menu-list{
+
+	display: flex;
+
+	flex-direction: column;
+
+	width: 100%;
+
+	display: none;
+
+	@include media-breakpoint-up(md){
+
+		display: flex !important;
+		flex-direction: row;
+		justify-content: flex-end;
+	}	
+}
+
+.top-menu__btn.active + .top-menu-list{
+
+	display: block;
+	// padding-bottom: $top-menu-vertical-gutter / 2;
+}
+
+.top-menu-list-item{
+
+// outline: 2px solid red;
+
+	// margin-top: $top-menu-vertical-gutter;
+
+	// padding: $top-menu-vertical-gutter / 2  $top-menu-gorizontal-gutter;
+	display: flex;
+	align-content: center;
+	align-items: center;
+
+	@include media-breakpoint-down(sm){
+
+		width: 100%;
+	}	
+
+}
+
+.top-menu-list-item:last-item{
+
+	// margin-bottom: $top-menu-vertical-gutter;
+}
+
+@include media-breakpoint-down(sm){
+
+	.top-menu-list-item:hover,
+	.top-menu-list-item:hover > .top-menu-list-item__link{
+
+		background-color: $top-menu-bg-color-hover;
+		color: $top-menu-color-hover;
+
+	}
+}
+
+.top-menu-list-item__link{
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: $top-menu-color;
+	display: flex;
+	align-content: center;
+	align-items: center;	
+}
+
+
+
+$aside-menu-bg-color: blue;
+$aside-menu-color: white;
+$aside-menu-color-hover: orange;
+$aside-menu-bg-color-hover: white;
+
+
+section.aside-menu{
+
+	background-color: $aside-menu-bg-color;
+}
+
+.aside-menu__btn{
+
+
+}
+
+
+
+.advantages-list-item{
+
+	@extend %col-12;
+	@extend %col-md-4;
+}
+
+// }

@@ -24,7 +24,7 @@ function displayInfoBlockConstructor() {
 
 	$('body').append($displayInfoBlock);
 
-	console.log($('body'));
+	// console.log($('body'));
 
 	$displayInfoBlock.on('click', function(){
 

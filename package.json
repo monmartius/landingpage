@@ -7,7 +7,8 @@
     "webpack": "webpack",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --hot",
+    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "start_": "cross-env NODE_ENV=development webpack-dev-server --hot --inline",
     "str": "cross-env NODE_ENV=development cross-env DEBUG_INFO=off webpack-dev-server"
   },
   "author": "monmartius <monmarius@gmail.com>",

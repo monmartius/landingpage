@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="10.1865mm" height="10.1865mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; 
+fill-rule:evenodd; 
+clip-rule:evenodd"
+viewBox="0 0 1019 1019"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+
+    .menuCloseBackground {
+        
+        fill-opacity: 0;
+    }
+    
+    .menuCloseIcon{
+    
+        fill: #fff;
+    }    
+   ]]>
+  </style>
+ </defs>
+ <g id="x0020">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="menuCloseBackground" width="1019" height="1019"/>
+  <rect class="menuCloseIcon" transform="matrix(0.505243 -0.505243 0.0711723 0.0711723 215.743 730.405)" width="1019" height="1019"/>
+  <rect class="menuCloseIcon" transform="matrix(-0.505243 -0.505243 -0.0711723 0.0711723 802.907 730.405)" width="1019" height="1019"/>
+ </g>
+</svg>
