@@ -149,7 +149,7 @@ module.exports = {
 
 
 			{
-				test: /\.(eot|ttf|woff|woff2)$/,
+				test: /\.(eot|otf|ttf|woff|woff2)$/,
 				loader: 'file-loader',
 				options: {
 					name: '[name].[ext]',
