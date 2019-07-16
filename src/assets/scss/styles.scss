@@ -3,6 +3,32 @@
 
 // @import ""
 
+
+// @font-face {
+//   font-family: 'Font Awesome 5 Free';
+//   /*font-family: 'FontAwesome';*/
+//   font-style: normal;
+//   font-weight: 900;
+//   font-display: auto;
+//   src: url("../../../node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.eot");
+//   src: url("../../../node_modules/@fortawesome/fontawesome-free//webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), 
+//   url("../../../node_modules/@fortawesome/fontawesome-free//webfonts/fa-regular-400.woff2") format("woff2"), 
+//   url("../../../node_modules/@fortawesome/fontawesome-free//webfonts/fa-regular-400.woff") format("woff"), 
+//   url("../../../node_modules/@fortawesome/fontawesome-free//webfonts/fa-regular-400.ttf") format("truetype"), 
+//   url("../../../node_modules/@fortawesome/fontawesome-free//webfonts/fa-regular-400.svg#fontawesome") format("svg"); 
+// }
+
+// .far {
+//   font-family: 'Font Awesome 5 Free';
+//   font-weight: 400; }
+
+
+
+@font-face {
+
+
+}
+
 @font-face {
 
   font-family: 'akrobatregular';
@@ -82,7 +108,7 @@ section.top-menu{
 .top-menu__btn{
 
 // background-color: red;
-outline: 1px solid red;
+// outline: 1px solid red;
 
 
 	width: $top-menu__btn-width;
@@ -258,7 +284,7 @@ section.aside-menu{
 
 .callback * {
 
-	outline: 1px solid red;
+	// outline: 1px solid red;
 }
 
 .callback-phone{
@@ -610,9 +636,13 @@ section.aside-menu{
 	&:after{
 		
 		font-size: 16px;
-		content: "\f061";
+		content: "\f2dc";
+		// content: "\f839";
 		color: $base-color;
-		font-family: FontAwesome;
+		font-family: 'Font Awesome 5 Free';
+		// font-family: "Font Awesome 5 Brands";
+		font-weight: 900;
+		// font-family: 'akrobatExtraBold';
 		margin-right: 10px; 
 	}
 }
