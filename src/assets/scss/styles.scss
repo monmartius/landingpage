@@ -72,6 +72,7 @@ body{
 
 $base-color: #fbc900;
 $base-bg-color: #383838;
+$inverse-color: #383838;
 
 
 
@@ -355,10 +356,38 @@ section.aside-menu{
 
 
 
+section{
+
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
 
 
 
+section.first-screen{
 
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+
+.section-title{
+
+	font-family: "akrobatBold";
+	font-size: 30px;
+
+	text-transform: uppercase;
+}
+
+.section-title-text{}
+
+.section-title-text_inverse{
+	
+	background-color: $inverse-color;
+	color: $base-color;
+	padding-left: 8px;
+	padding-right: 8px;
+}
 
 
 .first-screen{
