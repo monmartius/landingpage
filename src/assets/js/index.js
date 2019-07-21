@@ -30,14 +30,7 @@ const myEvents = {
 
 	events: {},
 
-	add(eventName, eventHandler, eventListener) {
-
-function log(){
-			console.log('eventName', eventName)
-			console.log('eventHandler', eventHandler)
-			console.log('eventListener', eventListener)
-}
-
+	add(eventName, eventListener,  eventHandler) {
 
 		if(!eventHandler || !eventName || !eventListener){
 
@@ -46,89 +39,89 @@ function log(){
 
 
 
-console.log('---------------------------------------')
+// console.log('---------------------------------------')
 
 
-console.log('')
-console.log('')
-		console.log('Получили входные параметры:')
-		log()
-console.log('')
+// console.log('')
+// console.log('')
+// console.log('Получили входные параметры:')
+// log()
+// console.log('')
 
 
-		console.log('Проверяем, есть ли такое событие')
+// console.log('Проверяем, есть ли такое событие')
 
 		if (!this.events[eventName]) {
-console.log('')
+// console.log('')
 
 
-			console.log('1. Нет такого события')
-			console.log('')
-			console.log('Добавили событие, слушателя и обработчик')
-			console.log('')
+// console.log('1. Нет такого события')
+// console.log('')
+// console.log('Добавили событие, слушателя и обработчик')
+// console.log('')
 
 			this.events[eventName] = {
 
 				listeners: [{
 
-					item: eventHandler,
-					handlers: [eventListener]
+					item: eventListener,
+					handlers: [eventHandler]
 				}]
 			}
 		}
 		else{
 
-			console.log('')
-			console.log('2. Событие есть, надо проверить слушателей')
+// console.log('')
+// console.log('2. Событие есть, надо проверить слушателей')
 
 
 			let listeners = this.events[eventName].listeners;
 			
 
-			console.log('')
-			console.log('Проверяем в цикле')
+// console.log('')
+// console.log('Проверяем в цикле')
 
 			for(var i = 0; i < listeners.length; i++){
 
-				console.log('i = ', i)
-				console.log('listeners[i].item =', listeners[i].item)
-				console.log('eventHandler =', eventHandler)
+// console.log('i = ', i)
+// console.log('listeners[i].item =', listeners[i].item)
+// console.log('eventHandler =', eventHandler)
 
-				console.log('listeners[i].item === eventHandler');
-				console.log(listeners[i].item === eventHandler);
-
-
-				if(listeners[i].item === eventHandler){
-
-					console.log('Элемент-слушатель найден: ', listeners[i].item)
-
-					console.log('Проверяем обработчики элемента-слушателя')
-					console.log('listeners[i].handlers.indexOf(eventListener) + 1:')
-					console.log(!(listeners[i].handlers.indexOf(eventListener) + 1))
+// console.log('listeners[i].item === eventHandler');
+// console.log(listeners[i].item === eventHandler);
 
 
-					if(!(listeners[i].handlers.indexOf(eventListener) + 1)){
+				if(listeners[i].item === eventListener){
+
+// console.log('Элемент-слушатель найден: ', listeners[i].item)
+
+// console.log('Проверяем обработчики элемента-слушателя')
+// console.log('listeners[i].handlers.indexOf(eventListener) + 1:')
+// console.log(!(listeners[i].handlers.indexOf(eventListener) + 1))
 
 
-						console.log('Нет такого обработчика у элемента-слушателя, добавляем')
-						// console.log('Нет такого обработчика у элемента-слушателя')
+					if(!(listeners[i].handlers.indexOf(eventHandler) + 1)){
 
-						console.log(listeners[i].handlers)
-						console.log(listeners[i].handlers.indexOf(eventListener))
 
-						// alert()
+// console.log('Нет такого обработчика у элемента-слушателя, добавляем')
+// console.log('Нет такого обработчика у элемента-слушателя')
 
-						listeners[i].handlers.push(eventListener);
+// console.log(listeners[i].handlers)
+// console.log(listeners[i].handlers.indexOf(eventListener))
 
-						console.log('Выходим из цикла, i=', i)
+// alert()
+
+						listeners[i].handlers.push(eventHandler);
+
+// console.log('Выходим из цикла, i=', i)
 						break;
 					}
 					else{
 
 
-						console.log('Есть такой обработчик у элемента-слушателя, игнорируем')
-						console.log(listeners[i].handlers)
-						// alert()
+// console.log('Есть такой обработчик у элемента-слушателя, игнорируем')
+// console.log(listeners[i].handlers)
+// // alert()
 
 						break;
 					}
@@ -136,22 +129,22 @@ console.log('')
 			}
 
 
-console.log('Проверям счетчик i =', i)
-console.log('listeners.length =', listeners.length)
+// console.log('Проверям счетчик i =', i)
+// console.log('listeners.length =', listeners.length)
 
 			if(i === listeners.length){
 
-				console.log('')
-				console.log('Прошли весь цикл, добавляем слушателя')
+// console.log('')
+// console.log('Прошли весь цикл, добавляем слушателя')
 
-				listeners.push({item: eventHandler, handlers: [eventListener]});
-						console.log(listeners)
-						// alert()
+				listeners.push({item: eventListener, handlers: [eventHandler]});
+// console.log(listeners)
+// // alert()
 			}
 		}
 	},
 
-	remove(eventName, eventHandler, eventListener){
+	remove(eventName, eventListener,  eventHandler){
 
 
 
@@ -172,30 +165,30 @@ console.log('listeners.length =', listeners.length)
 
 		let listeners = this.events[eventName].listeners;
 
-console.log('Нашли событие', this.events[eventName])
+// console.log('Нашли событие', this.events[eventName])
 
 
 		let listenerIndex = listeners.length;
 
 		for(var i = 0; i < listeners.length; i++){
 			
-			if(listeners[i].item === eventHandler){
+			if(listeners[i].item === eventListener){
 
 				listenerIndex = i;
 				listener = listeners[i];
-console.log('Нашли слушателя', listener)
+// console.log('Нашли слушателя', listener)
 			}
 		}
 
 		if(listener){
 
 
-			if(listener.handlers.indexOf(eventListener) + 1){
+			if(listener.handlers.indexOf(eventHandler) + 1){
 
-console.log('Слушатель', listener)
-console.log('Обработчик', listener.handlers)
+// console.log('Слушатель', listener)
+// console.log('Обработчик', listener.handlers)
 
-				listener.handlers = deleteElementFromArray(listener.handlers, listener.handlers.indexOf(eventListener));
+				listener.handlers = deleteElementFromArray(listener.handlers, listener.handlers.indexOf(eventHandler));
 
 				if(listener.handlers.length === 0){
 
@@ -210,7 +203,7 @@ console.log('Обработчик', listener.handlers)
 		}
 	},
 
-	trigger(eventName){
+	trigger(eventName, data){
 
 
 		if(!eventName){
@@ -237,7 +230,7 @@ console.log('Обработчик', listener.handlers)
 
 			for(var i = 0; i < handlers.length; i++){
 
-				handlers[i].bind(item)();
+				handlers[i].bind(item)(data);
 			}
 		}
 	}
@@ -245,43 +238,25 @@ console.log('Обработчик', listener.handlers)
 
 }
 
-// myEvents.add('div', 'click', '');
-let f =  function(){console.log(this)}
-
-myEvents.add('click', $('div')[0], ()=>{alert()});
-myEvents.add('Хуяк!', $('div')[0], f );
-// myEvents.add('click', $('div')[0], 'eventListener');
-// myEvents.add('click', $('div')[0], 'eventListener');
-// myEvents.add('click', $('div')[0], 'eventListener');
-// myEvents.add('click', $('div')[0], 'eventListener');
-// myEvents.remove('click', $('div')[0], 'eventListener');
-// myEvents.add('click', $(window)[0], 'eventListener');
-// myEvents.remove('click', $(window)[0], 'eventListener');
-// myEvents.add('div', 'mouse', 'eventListener');
-// myEvents.add('p', 'mouse', 'eventListener');
-// myEvents.add('p', 'mouse', 'eventListener2');
-// myEvents.add('ul', 'close', 'eventListener4');
-// myEvents.add('body', 'close', 'eventListener4');
-
-myEvents.trigger('Хуяк!');
-console.log(myEvents);
-myEvents.remove('Хуяк!', $('div')[0], f );
-myEvents.trigger('Хуяк!');
-
-let b = ['aaaa', 'bbbb', 'ccc', 'dddd'];
-
-// let c = ['aaaa', 'bbbb', 'ccc', 'dddd'];
 
 
-// let d = b.splice(0, 2)
+// // myEvents.add('div', 'click', '');
+let f =  function(data){console.log(data)};
 
-// console.log(d)
-// console.log(b)
-console.log(deleteElementFromArray(b, -1))
+// myEvents.add('click', $('div')[0], ()=>{alert()});
+// myEvents.add('Хуяк!', $('div')[0], f );
+// // myEvents.add('click', $('div')[0], 'eventListener');
+// // myEvents.add('click', $('div')[0], 'eventListener');
 
-let ccc = 1;
+// myEvents.trigger('Хуяк!');
+// console.log(myEvents);
+// myEvents.remove('Хуяк!', $('div')[0], f);
+// myEvents.trigger('Хуяк!');
 
-let a = ()=>{console.log('a', ccc++)};
+// myEvents.add('click', $('div')[0], (data)=>{alert(data)});
+// myEvents.add('click', $('div')[0], f);
+// myEvents.trigger('click', 'click!');
+// myEvents.remove('click', $('div')[0], f);
 
 
 
@@ -301,16 +276,255 @@ let a = ()=>{console.log('a', ccc++)};
 	});
 
 
-	$(window).on('resize', function(){
+$(window).on('resize', function(){
 
-		let width = breakpoints.windowSizePx().width;
-		let height = breakpoints.windowSizePx().height;
+	let width = breakpoints.windowSizePx().width;
+	let height = breakpoints.windowSizePx().height;
 
-		displayInfo.html('size: ' + breakpoints.onPoint() 
-			+ '<br>'+ breakpoints.windowSizePx().widthHeight 
-			+ '<br>aspect-ratio: ' + width + '/' + height
-			+ ' : ' + Math.round( width/height*100)/100 + "");
-	});
+	displayInfo.html('size: ' + breakpoints.onPoint() 
+		+ '<br>'+ breakpoints.windowSizePx().widthHeight 
+		+ '<br>aspect-ratio: ' + width + '/' + height
+		+ ' : ' + Math.round( width/height*100)/100 + "");
+});
+
+
+
+
+
+
+if (!Array.from){
+	
+	Array.prototype.from = function (arrayLike) {
+		
+		let array = [];
+
+		for(let i = 0; i < arrayLike.length; i++){
+
+			array.push(arrayLike[i]);
+		}
+
+		return array;
+	}
+}
+
+if (!Array.forEach){
+	
+	Array.prototype.forEach = function (f) {
+
+		for(let i = 0; i < this.length; i++){
+
+			f(this[i], i, this);
+		}
+	}
+}
+
+
+let tabs = {
+
+	ids: [],
+
+	items: {},
+
+	[Symbol.iterator](){
+
+		let _this = this;
+
+
+
+
+		let index = 0;
+
+		return{
+
+			next(){
+
+				if(index < _this.ids.length)
+
+					return  {
+
+						value: _this.items[index++],
+						done: false
+					}
+				else
+
+					return  {
+
+						done: true
+					}
+
+			}
+
+		}
+
+	},
+
+	init(){
+
+		// let _this = this;
+
+
+		// tabs.items['service']
+		// tabs.items.service
+		// tabs.items[0]
+		// tabs.items.length
+
+		// tabs.items['service'].panel
+		// tabs.items['service'].panelItems['econom']
+		// tabs.items['service'].panelItems.econom
+		// tabs.items['service'].panelItems[0]
+		// tabs.items['service'].panelItems.length
+
+		// tabs.items['service'].container
+		// tabs.items['service'].contentItems['econom']
+		// tabs.items['service'].contentItems.econom
+		// tabs.items['service'].contentItems[0]
+		// tabs.items['service'].contentItems.length
+
+		// tabs = {
+
+		// 	items: {
+
+		// 		'service' : {
+
+
+		// 		},
+
+		// 		0: 
+
+		// 	}
+		// }
+
+
+		let _this = this;
+
+		let elements = Array.from(document.querySelectorAll('[data-tabs]'));
+
+
+		elements.forEach(
+
+
+			function (item, i) {
+
+				let tabItem = {};
+
+				let id = item.getAttribute('data-tabs');
+
+				_this.ids.push(id);
+
+				_this.items[id] = tabItem;
+
+				_this.items[i] = tabItem;
+
+
+				tabItem.id = id;
+
+				tabItem.index = i;
+
+				tabItem.active = 0;
+
+				tabItem.panel = item.querySelector('[data-tabs-panel]');
+
+				tabItem.container = item.querySelector('[data-tabs-container]');
+
+				let panelItemsArr = Array.from(tabItem.panel.querySelectorAll('[data-tabs-id]'));
+				
+				tabItem.panelItems = {};
+
+				tabItem.panelItemsLength = panelItemsArr.length;
+
+				for(let i = 0; i < panelItemsArr.length; i++){
+
+					tabItem.panelItems[i] = panelItemsArr[i];
+					console.log("panelItemsArr[i]", panelItemsArr[i]);
+
+					tabItem.panelItems[panelItemsArr[i].getAttribute('data-tabs-id')] = panelItemsArr[i];
+				}
+
+				let itemsArr = Array.from(tabItem.container.querySelectorAll('[data-tabs-id]'));
+
+				tabItem.contentItems = {};
+
+				tabItem.contentItemsLength = itemsArr.length;
+
+				for(let i = 0; i < itemsArr.length; i++){
+
+					tabItem.contentItems[i] = itemsArr[i];
+
+					tabItem.contentItems[itemsArr[i].getAttribute('data-tabs-id')] = itemsArr[i];
+				}
+
+
+			}
+		)
+
+		for(let tab of this){
+
+			tab.activeClassName = tab.id + '_active';
+
+			for(let i = 0; i < tab.panelItemsLength; i++){
+				// console.log("i", i);
+
+				tab.panelItems[i].classList.remove(tab.activeClassName);
+
+				let thisItem = tab.panelItems[i];
+
+				let thisItemIndex = i;
+
+				thisItem.addEventListener('click', function(event){
+
+					event.preventDefault();
+
+					tab.panelItems[tab.active].classList.remove(tab.activeClassName);
+					tab.contentItems[tab.active].classList.remove(tab.activeClassName);
+
+
+					tab.active = thisItemIndex;
+
+					thisItem.classList.add(tab.activeClassName);
+					tab.contentItems[tab.active].classList.add(tab.activeClassName);
+
+				});			
+				// console.log("remove(tab.activeClassName)");
+			}
+
+			// console.log("tab.panelItems[tab.active].classList", tab.panelItems[tab.active].classList);
+			tab.panelItems[tab.active].classList.add(tab.activeClassName);
+		}
+
+
+
+		return this;
+	}
+}
+
+tabs.init();
+console.log("tabs", tabs);
+
+
+
+		for(let tab of tabs){
+
+
+
+		}
+
+// console.log("tabs", tabs.init());
+
+// console.log("tabsIterator", tabsIterator.next().value);
+
+
+// tabs['services'e.panel['econom']
+// tabs['services'].container['econom']
+
+// tabs[tabsId].panel[panelId]
+
+// let c = {
+
+// 	a: 1
+// }
+
+// console.log(c);
+
 
 
 	// let topMenuBtn = document.querySelector('.top-menu__btn');

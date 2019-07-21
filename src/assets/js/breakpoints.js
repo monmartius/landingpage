@@ -1,6 +1,6 @@
 function objToArrayObjectsKeyValue(obj){
 
-	arr = [];
+	let arr = [];
 
 	for (var key in obj){
 

@@ -350,7 +350,7 @@ $container-max-widths: (
 
 $grid-columns:                12 !default;
 $grid-gutter-width:           30px !default;
-
+$grid-gutter-width-half:           $grid-gutter-width / 2;
 
 // Components
 //
@@ -1897,10 +1897,10 @@ $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
 
 %no-gutters{
   
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 %container-without-row{
