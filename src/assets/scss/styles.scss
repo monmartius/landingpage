@@ -23,6 +23,12 @@
 //   font-weight: 400; }
 
 
+$container-max-widths: (
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
 
 @font-face {
 
@@ -96,7 +102,7 @@ $top-menu__btn-height: 50px;
 	padding-left: 30px;
 	padding-right: 30px;
 	border: 0;
-	margin: 8px;
+	// margin: 8px;
 
 	transition: .5s;
 
@@ -117,21 +123,37 @@ input{
 	// background-color: red;
 		// width: 300px;
 	font-size: 16px;
-	padding: 6px 0 6px 12px;
+	padding: 0;
 	border: 1px solid $base-bg-color;
 	background: transparent;
 	border-radius: 4px;
 	// margin-top: 30px;
-	margin-top: 20px;
+	margin: 0px;
 	width: 100%;
 
-	margin-right: 0;
+	// margin-right: 0;
 	width: 100%;
 }
 
 
 
+[class*="btn"]:active{
+	// display: inline-block;
+	// display: block;	
+	transition: .1s;
+	transform: translateX(18px) translateY(18px) rotate(-180deg);
 
+	outline: 4px solid red;
+}
+
+
+[class*="btn"]:hover{
+	
+	transition: .1s;
+	transform: translateX(18px) translateY(18px) rotate(-180deg);
+
+	outline: 4px solid red;
+}
 
 
 
@@ -924,7 +946,7 @@ section.first-screen{
 
 	@include media-breakpoint-up(sm){
 	
-		min-width: calc(200% - #{$grid-gutter-width} / 2);
+		min-width: calc(100% - #{$grid-gutter-width} / 2);
 	}
 	
 
@@ -1157,18 +1179,50 @@ section.first-screen{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .your-safety{
 	
 	color: $white;
 
 	background-image: url(../images/roombg.jpg);
+
+	// *{
+	// 	outline: 1px solid red;
+	// }
+
+	& > * > .row {
+
+		align-items: flex-end; 
+	}
 }
 
 
 .your-safety-section-title {
 
 	text-align: center;
-	@extend %col-sm-12;
+	
+	@extend %col-12;
+	
+	@extend %col-lg-12;
 
 }
 .section-title-text_your-safety {
@@ -1183,10 +1237,8 @@ section.first-screen{
 	
 outline: 1px solid red;
 
-	order: -1;
 
-
-	@extend %col-sm-12;
+	@extend %col;
 	@extend %col-lg-4;
 
 	img {
@@ -1195,43 +1247,45 @@ outline: 1px solid red;
 	}	
 }
 
-.our-safety-content-wrapper{
-
-	// @extend %col-sm-12;
-	@extend %col-lg-8;
-
-	float: right;
-	background-color: rgba(255, 0, 0, .4);
-}
-
 .your-safety-5-reasons-list {
 
-	// display: flex;
+	
+	@extend %col-sm-12;
+	@extend %col-lg-8;
 
-
-	@extend .row;
-
-	justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	
+	// @include make-row();
+	width: 100%;
+	
 	
 }
 
 .your-safety-5-reasons-list-item {
 
-	
-	@extend %col-2;
-	
-
 	padding-top: 8px;
 	padding-bottom: 14px;
 
-
+	
+	// @extend %col-sm-3;
+	@extend %col-md;
+	// @extend %col-lg;
 
 
 	@include media-breakpoint-only(sm){
 	
-
+		max-width: 20% !important;
+		
 	}
 	
+
+	@include media-breakpoint-down(sm){
+	
+		max-width: 30%;
+	}
+	
+
 	
 }
 
@@ -1255,16 +1309,62 @@ outline: 1px solid red;
 
 	text-transform: uppercase;
 }
-.your-safety-free-consultations {}
-.your-safety-application {}
+.your-safety-free-consultations {
+
+
+	@extend %col-12;
+	
+	@extend %col-md-6;
+
+	display: flex;
+
+	align-content: center;
+	align-items:  center;
+
+	padding: 15px;
+
+	margin: 15px 0;
+
+	border: 2px solid $base-color;
+}
+.your-safety-application {
+
+	@extend %col-12;
+	@extend %col-md-6;
+
+	text-align: center;
+
+}
 
 .your-safety-application-input{
 
 	border-color: $base-color;
+	// margin: calc(100% - 40px);
+	// margin: 15px;
+
+	margin-top: 15px;
+	margin-bottom: 15px;
+
+	padding: 6px;
+	width: calc(100% - 30px);
+
+	color: $base-color;
+
+	font-weight: bold;
+
+	// &::placeholder{
+
+	// 	color: red;
+	// }
+	// padding: 20px;
 }
 
 .your-safety-application-title {}
-.btn-your-safety-application {}
+
+.btn-your-safety-application {
+
+
+}
 
 
 
