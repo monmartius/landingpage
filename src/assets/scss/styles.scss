@@ -118,21 +118,17 @@ $top-menu__btn-height: 50px;
 
 
 
-input{
+input, textarea{
 
 	// background-color: red;
 		// width: 300px;
 	font-size: 16px;
-	padding: 0;
+	padding: 5px 15px;
 	border: 1px solid $base-bg-color;
 	background: transparent;
 	border-radius: 4px;
-	// margin-top: 30px;
-	margin: 0px;
 	width: 100%;
 
-	// margin-right: 0;
-	width: 100%;
 }
 
 
@@ -140,20 +136,12 @@ input{
 [class*="btn"]:active{
 	// display: inline-block;
 	// display: block;	
-	transition: .1s;
-	transform: translateX(18px) translateY(18px) rotate(-180deg);
+	transition: .05s;
+	transform: translateX(2px) translateY(2px);
 
-	outline: 4px solid red;
+	// outline: 4px solid red;
 }
 
-
-[class*="btn"]:hover{
-	
-	transition: .1s;
-	transform: translateX(18px) translateY(18px) rotate(-180deg);
-
-	outline: 4px solid red;
-}
 
 
 
@@ -1371,5 +1359,171 @@ outline: 1px solid red;
 
 
 
+
+
+
+
+.free-project-gift {
+
+	background-image: url(../images/noisy_grid.png);
+
+	& > * > .row {
+
+		align-content: flex-end;
+		align-items: flex-end;
+	}
+
+	padding-bottom: 0;
+}
+
+
+.free-project-gift-illustration {
+
+
+
+@include media-breakpoint-down(md){
+
+	display: none;
+}
+
+
+	@extend %col-md-8;
+	@extend %col-lg-7;
+
+	img{
+		width: 100%;
+	}
+	
+}
+
+
+.free-project-gift-content-wrapper {
+
+	margin-bottom: 30px;
+
+
+	@extend %col;
+
+	// @extend %offset-md-1;
+	
+	@extend %col-lg-5;
+
+
+	@include media-breakpoint-up(lg){
+
+
+		background-image: url(../images/spot.png);
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+
+}
+
+.free-project-gift-title {
+
+}
+
+.free-project-gift-form {
+
+	border: 2px solid $white;
+	padding: 30px;
+}
+
+.section-title-text {
+
+}
+
+
+.section-title-text_free-project-gift {
+
+	display: inline-block;
+}
+.section-title-text_inverse {}
+
+.free-project-gift__text {
+
+	text-align: center;	
+
+	& + .free-project-gift__text {
+		margin-top: 30px;
+	}
+}
+
+
+.free-project-gift__input {
+
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.free-project-gift__btn {
+	
+	// display: inline-block;
+
+	display: block;
+
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@extend %col-md-8;
+
+
+	
+
+	background-color: $gray-400;
+}
+
+
+.test {
+
+	
+	@extend %c-row;
+	
+	outline: 1px solid green;
+
+	.container {
+
+		outline: 1px solid blue;
+
+		background-color: #5f5;
+	}
+}
+
+.test > div {
+
+	@extend %c-container;
+}
+
+
+.test > div > div {
+
+	@extend %c-row;
+}
+
+.test > div > div > .col6 {
+
+
+
+	@extend %row;
+	@extend %c-col-6;
+}
+
+.test > div > div > .col6 > .item {
+
+	@extend %col-5;
+}
+
+.test > div > div > .col6 > .item1 {
+
+	// @extend %c-col-5;
+	@extend %c-offset-2;
+}
+
+.test * {
+
+	outline: 1px solid red;
+
+}
 
 
