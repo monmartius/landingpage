@@ -1361,8 +1361,6 @@ outline: 1px solid red;
 
 
 
-
-
 .free-project-gift {
 
 	background-image: url(../images/noisy_grid.png);
@@ -1527,3 +1525,58 @@ outline: 1px solid red;
 }
 
 
+
+
+.scheme-of-work {}
+.scheme-of-work-title {
+
+
+	@extend %c-col-12;
+	text-align: center;
+	
+}
+
+.section-title-text_scheme-of-work {
+
+	display: inline-block;
+}
+
+
+.section-title-text_inverse {}
+
+.scheme-of-work-clause {
+
+outline: 1px solid red;
+
+	@extend %col-12;
+	
+}
+
+.scheme-of-work-clause-illustration {
+
+
+	@extend %col;
+	@extend %col-sm-4;
+
+
+	@include media-breakpoint-down(sm){
+	
+		text-align: center;
+	}
+	
+	
+}
+.scheme-of-work-clause-info {
+
+	@extend %col;
+	@extend %col-sm-4;
+}
+.scheme-of-work-clause-title {}
+.scheme-of-work-clause-info-form {}
+.scheme-of-work-clause-info-form__input {}
+.btn {}
+.scheme-of-work-clause-info-form__btn {}
+.scheme-of-work-clause-info-details {}
+.scheme-of-work-clause-info-details-item {}
+.scheme-of-work-clause-info-details-item-illustration {}
+.scheme-of-work-clause-info-details-item-text {}
